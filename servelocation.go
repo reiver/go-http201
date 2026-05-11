@@ -15,6 +15,5 @@ func ServeLocation(responseWriter http.ResponseWriter, url string) error {
 	}
 	header.Add("Location", url)
 
-	responseWriter.WriteHeader(StatusCode)
-	return nil
+	return ServeString(responseWriter, DefaultStatusText)
 }
